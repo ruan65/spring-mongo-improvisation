@@ -2,8 +2,11 @@ package org.premiumapp.regrobot.robot;
 
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+import java.util.UUID;
 
 @Document
 public class Robot {
@@ -11,8 +14,40 @@ public class Robot {
     @Id
     String id;
 
-    @Indexed(unique = true)
     String name;
+    String address;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    Date dateRegistered = new Date();
+
+    String robotId = UUID.randomUUID().toString();
+
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Date getDateRegistered() {
+        return dateRegistered;
+    }
+
+    public void setDateRegistered(Date dateRegistered) {
+        this.dateRegistered = dateRegistered;
+    }
+
+    public String getRobotId() {
+        return robotId;
+    }
+
+    public void setRobotId(String robotId) {
+        this.robotId = robotId;
+    }
+
+
 
     public String getId() {
         return id;
