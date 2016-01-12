@@ -1,4 +1,4 @@
-package org.premiumapp.regrobot.robot.web;
+package org.premiumapp.regrobot.robot;
 
 
 import org.premiumapp.regrobot.robot.Robot;
