@@ -18,6 +18,7 @@ public class ClaimController {
 
         Claim claim = new Claim();
         claim.didYouVisitOther = request.getDidYouVisitOther();
+        claim.injuresSet = request.getInjuresSet();
 
         return new ClaimRegistrationResponse(claimService.registerClaim(claim));
     }
