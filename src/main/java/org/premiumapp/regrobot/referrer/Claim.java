@@ -12,11 +12,47 @@ public class Claim {
     @Id
     String id;
 
-    private ClaimantDetails claimantDetails;
-    private AccidentDetails accidentDetails;
+    public String gender;
+
+    public String forename;
+    public String surname;
+    public String dob;
+
+    public String nin;
+
+    public String address1;
+    public String address2;
+    public String address3;
+
+    public String city;
+    public String postCode;
+
+    public String phone;
+    public String mobile;
+    public String email;
+
+    public String contactTime;
+
+    public String occupation;
+
+    public boolean twoPhotoIds;
+
+    /**
+     *  Accident details
+     */
+
+    public String date;
+    public String placeInCar;
+
+    public Set<String> damages = new HashSet<>(4);
+    public Set<String> damageType = new HashSet<>(3);
+
+    public String description;
+
+    public int numberOfPassengers;
 
     public Set<String> injuresSet = new HashSet<>(4);
-    public String injuresListOther;
+    public String otherInjuries;
 
     public Set<String> psychologicalSet = new HashSet<>(3);
 
@@ -30,41 +66,7 @@ public class Claim {
 
     public boolean anotherAccident;
 
-    public ClaimantDetails getClaimantDetails() {
-        return claimantDetails;
-    }
-
-    public void setClaimantDetails(ClaimantDetails claimantDetails) {
-        this.claimantDetails = claimantDetails;
-    }
-
-    public AccidentDetails getAccidentDetails() {
-        return accidentDetails;
-    }
-
-    public void setAccidentDetails(AccidentDetails accidentDetails) {
-
-        this.accidentDetails = accidentDetails;
-    }
-
     public String getClaimId() {
         return id;
-    }
-
-    @Override
-    public String toString() {
-        return "Claim{" +
-                "claimantDetails=" + claimantDetails +
-                ", \naccidentDetails=" + accidentDetails +
-                ", \ninjuresSet=" + injuresSet +
-                ", \ninjuresListOther='" + injuresListOther + '\'' +
-                ", \npsychologicalSet=" + psychologicalSet +
-                ", \ndidYouVisit=" + didYouVisit +
-                ", \ndidYouVisitOther='" + didYouVisitOther + '\'' +
-                ", \nproblemsAtHome=" + problemsAtHome +
-                ", \nproblemsAtWork=" + problemsAtWork +
-                ", \nareYouWilling=" + areYouWilling +
-                ", \nanotherAccident=" + anotherAccident +
-                '}';
     }
 }

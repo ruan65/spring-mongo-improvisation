@@ -14,12 +14,8 @@ public class ClaimController {
 
 
     @RequestMapping(value = "/register/claim", method = RequestMethod.POST)
-    public ClaimRegistrationResponse registerClaim(@RequestBody ClaimRequest request) {
+    public ClaimRegistrationResponse registerClaim(@RequestBody Claim request) {
 
-        Claim claim = new Claim();
-        claim.didYouVisitOther = request.getDidYouVisitOther();
-        claim.injuresSet = request.getInjuresSet();
-
-        return new ClaimRegistrationResponse(claimService.registerClaim(claim));
+        return new ClaimRegistrationResponse(claimService.registerClaim(request));
     }
 }
